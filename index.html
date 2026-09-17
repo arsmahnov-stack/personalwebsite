@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Махнов Арсений — преподаватель философии · et seq.</title>
+<meta name="description" content="Махнов Арсений — преподаватель философии и критического мышления, тренер олимпиадных команд, автор курсов. Образовательный проект et seq.">
+<meta name="color-scheme" content="light only">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    color-scheme: light only;
+    --ink:      #1F2044; /* глубокий тёмно-синий */
+    --cream:    #F4F0E8; /* кремовый фон */
+    --terra:    #A03A2A; /* терракотовый акцент */
+    --muted:    #7A7266; /* приглушённый серо-коричневый */
+    --line:     rgba(31,32,68,.18);
+    --line-dk:  rgba(244,240,232,.22);
+    --serif: "Playfair Display", Georgia, "Times New Roman", serif;
+    --sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --wrap: 760px;
+  }
+
+  *{ box-sizing: border-box; }
+
+  html{ -webkit-text-size-adjust: 100%; }
+
+  body{
+    margin:0;
+    background: var(--cream);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 17px;
+    line-height: 1.75;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  .wrap{
+    width: 100%;
+    max-width: var(--wrap);
+    margin: 0 auto;
+    padding: 0 22px;
+  }
+
+  section{ padding: 60px 0; }
+
+  /* --- тёмные секции во всю ширину --- */
+  .dark{
+    background: var(--ink);
+    color: var(--cream);
+  }
+  .dark .kicker{ color: rgba(244,240,232,.62); }
+  .dark a{ color: var(--cream); }
+
+  /* --- типографика --- */
+  .kicker{
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: .22em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 0 0 18px;
+  }
+
+  h1{
+    font-family: var(--serif);
+    font-weight: 700;
+    font-size: clamp(40px, 11vw, 62px);
+    line-height: 1.02;
+    letter-spacing: -0.01em;
+    margin: 0 0 16px;
+  }
+
+  h2{
+    font-family: var(--serif);
+    font-weight: 600;
+    font-size: clamp(27px, 6.5vw, 36px);
+    line-height: 1.12;
+    margin: 0 0 30px;
+  }
+
+  h3{
+    font-family: var(--serif);
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 1.2;
+    margin: 0 0 8px;
+  }
+
+  p{ margin: 0 0 16px; }
+  .lede{ font-size: 18px; color: var(--ink); }
+  .dark .lede{ color: var(--cream); }
+
+  hr.rule{
+    border: 0;
+    border-top: 1px solid var(--line);
+    margin: 0;
+  }
+  .dark hr.rule{ border-top-color: var(--line-dk); }
+
+  a{ color: var(--terra); text-decoration: none; }
+  a:hover{ text-decoration: underline; text-underline-offset: 3px; }
+
+  /* --- кнопка --- */
+  .btn{
+    display: inline-block;
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: 15px;
+    letter-spacing: .02em;
+    background: var(--terra);
+    color: var(--cream);
+    padding: 13px 26px;
+    border-radius: 3px;
+    text-decoration: none;
+  }
+  .btn:hover{ background: #8a3223; text-decoration: none; color: var(--cream); }
+  .btn-lg{ font-size: 17px; padding: 16px 38px; }
+
+  /* вторичная кнопка (контур) */
+  .btn-ghost{
+    background: transparent;
+    color: var(--terra);
+    border: 1px solid var(--terra);
+    padding: 12px 25px;
+  }
+  .btn-ghost:hover{ background: var(--terra); color: var(--cream); }
+  .btn-lg.btn-ghost{ padding: 15px 37px; }
+
+  /* на тёмном фоне контур кремовый */
+  .dark .btn-ghost{ color: var(--cream); border-color: rgba(244,240,232,.55); }
+  .dark .btn-ghost:hover{ background: var(--cream); color: var(--ink); border-color: var(--cream); }
+
+  /* группа кнопок */
+  .btns{ display: flex; flex-wrap: wrap; gap: 12px; }
+  .final .btns{ justify-content: center; }
+
+  /* --- первый экран --- */
+  .hero{ padding-top: 64px; padding-bottom: 54px; }
+  .hero-grid{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    align-items: center;
+  }
+  .hero-name{ margin-bottom: 12px; }
+  .hero-role{
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 1.5;
+    margin: 0 0 24px;
+  }
+  .hero-photo{ order: 2; }
+  .hero-photo img{
+    display: block;
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    margin: 0 auto;
+  }
+
+  /* показатели */
+  .stats{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px 18px;
+    margin: 28px 0 30px;
+  }
+  .stat .num{
+    font-family: var(--serif);
+    font-weight: 700;
+    color: var(--terra);
+    font-size: 34px;
+    line-height: 1;
+    display: block;
+    margin-bottom: 8px;
+  }
+  .stat .cap{
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: 11px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    line-height: 1.35;
+  }
+
+  /* --- раздел «Путь»: две колонки --- */
+  .cols{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 44px;
+  }
+  .col-title{
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: rgba(244,240,232,.62);
+    margin: 0 0 20px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--line-dk);
+  }
+  .cv-row{ margin-bottom: 22px; }
+  .cv-period{
+    font-size: 13px;
+    color: rgba(244,240,232,.55);
+    margin-bottom: 3px;
+  }
+  .cv-role{
+    font-family: var(--serif);
+    font-size: 19px;
+    line-height: 1.25;
+    display: block;
+  }
+  .cv-note{
+    font-size: 14px;
+    color: rgba(244,240,232,.72);
+    line-height: 1.5;
+  }
+  .langs{
+    margin-top: 8px;
+    padding-top: 30px;
+    border-top: 1px solid var(--line-dk);
+  }
+  .langs .kicker{ margin-bottom: 12px; }
+  .langs p{ margin: 0; color: rgba(244,240,232,.85); }
+
+  /* --- предложения (Взрослым / Школьникам) --- */
+  .offer{ padding: 26px 0; }
+  .offer + .offer{ border-top: 1px solid var(--line); }
+  .offer p{ margin: 0 0 10px; }
+  .offer .desc{ color: var(--ink); }
+  .offer .price{ color: var(--muted); font-size: 15.5px; margin: 0; }
+
+  /* --- сетка курсов --- */
+  .courses{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1px;
+    background: var(--line-dk);
+    border: 1px solid var(--line-dk);
+    margin-bottom: 34px;
+  }
+  .course{
+    background: var(--ink);
+    padding: 22px 20px;
+    position: relative;
+  }
+  .course .n{
+    font-family: var(--serif);
+    font-size: 12px;
+    color: rgba(244,240,232,.5);
+    letter-spacing: .05em;
+    display: block;
+    margin-bottom: 10px;
+  }
+  .course .name{
+    font-family: var(--serif);
+    font-size: 19px;
+    line-height: 1.2;
+    display: block;
+    margin-bottom: 8px;
+  }
+  .course .meta{
+    font-size: 13.5px;
+    color: rgba(244,240,232,.7);
+    line-height: 1.5;
+  }
+  .course .grade{ color: rgba(244,240,232,.85); }
+
+  .leads{
+    color: rgba(244,240,232,.9);
+    margin-bottom: 20px;
+  }
+
+  /* --- финальный блок --- */
+  .final{ text-align: center; padding: 72px 0; }
+  .final .btns{ margin-bottom: 26px; }
+  .final-links{
+    font-size: 14px;
+    line-height: 1.9;
+    color: rgba(244,240,232,.72);
+  }
+  .final-links a{ color: rgba(244,240,232,.9); }
+  .foot{
+    margin-top: 30px;
+    font-family: var(--sans);
+    font-size: 12px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: rgba(244,240,232,.5);
+  }
+
+  /* ================= десктоп ================= */
+  @media (min-width: 620px){
+    .stats{ grid-template-columns: repeat(4, 1fr); }
+    .courses{ grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (min-width: 760px){
+    body{ font-size: 18px; }
+    section{ padding: 76px 0; }
+    .hero{ padding-top: 84px; }
+    .hero-grid{
+      grid-template-columns: 1fr 1fr;
+      gap: 36px;
+      align-items: center;
+    }
+    .hero-photo{ order: 0; }
+    .hero-photo img{ max-width: 100%; }
+    .stats{ gap: 18px 12px; }
+    .stat .num{ font-size: 28px; }
+    .cols{ grid-template-columns: 1fr 1fr; gap: 48px; }
+    .courses{ grid-template-columns: repeat(4, 1fr); }
+    .course{ padding: 22px 18px; }
+    .course .name{ font-size: 17px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ ПЕРВЫЙ ЭКРАН ============ -->
+<header class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div class="hero-text">
+        <p class="kicker">Кто я</p>
+        <h1 class="hero-name">Махнов Арсений</h1>
+        <p class="hero-role">Преподаватель философии и критического мышления · тренер олимпиадных команд · автор курсов</p>
+        <p class="lede">Более десяти лет учу школьников думать: читать первоисточники, строить аргумент, писать эссе и держать позицию в споре. Основатель философского клуба и образовательного бренда&nbsp;et&nbsp;seq.</p>
+
+        <div class="stats">
+          <div class="stat"><span class="num">10+</span><span class="cap">лет в преподавании</span></div>
+          <div class="stat"><span class="num">IPO</span><span class="cap">тренер сборной РК</span></div>
+          <div class="stat"><span class="num">2</span><span class="cap">Honored Mention · 2026</span></div>
+          <div class="stat"><span class="num">SOFO</span><span class="cap">жюри и автор заданий</span></div>
+        </div>
+
+        <div class="btns">
+          <a class="btn" href="https://t.me/Arsmahnov">Написать в Telegram</a>
+          <a class="btn btn-ghost" href="https://wa.me/77054588421">Написать в WhatsApp</a>
+        </div>
+      </div>
+
+      <div class="hero-photo">
+        <img src="photo.png" alt="Махнов Арсений" width="632" height="949" loading="eager">
+      </div>
+    </div>
+  </div>
+</header>
+
+<hr class="rule">
+
+<!-- ============ ПУТЬ (тёмный) ============ -->
+<section class="dark">
+  <div class="wrap">
+    <p class="kicker">Путь</p>
+    <h2>От кружка в Петербурге до сборной Казахстана</h2>
+
+    <div class="cols">
+      <div class="col-exp">
+        <p class="col-title">Опыт</p>
+
+        <div class="cv-row">
+          <div class="cv-period">2024–2026</div>
+          <span class="cv-role">Заместитель директора</span>
+          <span class="cv-note">Urban School, Астана</span>
+        </div>
+        <div class="cv-row">
+          <div class="cv-period">Астана</div>
+          <span class="cv-role">Преподаватель философии</span>
+          <span class="cv-note">7–12 классы, авторские курсы</span>
+        </div>
+        <div class="cv-row">
+          <div class="cv-period">2024 — сейчас</div>
+          <span class="cv-role">Тренер сборной РК по философии</span>
+          <span class="cv-note">подготовка к IPO</span>
+        </div>
+        <div class="cv-row">
+          <div class="cv-period">Астана</div>
+          <span class="cv-role">Основатель et seq.</span>
+          <span class="cv-note">философский клуб и образовательный бренд</span>
+        </div>
+        <div class="cv-row">
+          <div class="cv-period">2024–2025</div>
+          <span class="cv-role">Научный проект «Аристотель в России»</span>
+          <span class="cv-note">участник</span>
+        </div>
+        <div class="cv-row">
+          <div class="cv-period">2022 — сейчас</div>
+          <span class="cv-role">Читательский клуб «Несвоевременные размышления»</span>
+        </div>
+        <div class="cv-row">
+          <div class="cv-period">2013–2022</div>
+          <span class="cv-role">Педагог доп. образования</span>
+          <span class="cv-note">СПбГДТЮ: право, логика, философия</span>
+        </div>
+      </div>
+
+      <div class="col-edu">
+        <p class="col-title">Образование</p>
+
+        <div class="cv-row">
+          <div class="cv-period">Аспирантура</div>
+          <span class="cv-role">РХГА, история философии</span>
+          <span class="cv-note">Диссертация «Даймонион Сократа как парадигма человеческой свободы»</span>
+        </div>
+        <div class="cv-row">
+          <div class="cv-period">Магистр</div>
+          <span class="cv-role">СПбГУ</span>
+          <span class="cv-note">философия политики и права, 2016</span>
+        </div>
+        <div class="cv-row">
+          <div class="cv-period">Бакалавр</div>
+          <span class="cv-role">СПбГУ</span>
+          <span class="cv-note">юридический факультет, 2013</span>
+        </div>
+
+        <div class="langs">
+          <p class="kicker">Языки</p>
+          <p>Русский — родной · Английский — B1 · Древнегреческий — чтение текстов · Немецкий — A2 · Латынь — A1</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ВЗРОСЛЫМ ============ -->
+<section>
+  <div class="wrap">
+    <p class="kicker">Взрослым</p>
+
+    <div class="offer">
+      <h3>Читательский клуб «Несвоевременные размышления»</h3>
+      <p class="desc">Регулярные встречи по классическим текстам, с 2022 года. Небольшой круг, разговор, а не лекция.</p>
+      <p class="price">Вход 1 000 ₸, дальше по желанию.</p>
+    </div>
+
+    <div class="offer">
+      <h3>Философский разбор</h3>
+      <p class="desc">Индивидуальная работа с одним вашим вопросом. Час один на один.</p>
+      <p class="price">От 50 000 до 100 000 ₸ за встречу, сумму в этом диапазоне вы выбираете сами. Предварительный получасовой разговор бесплатно, чтобы понять, ваш ли это формат.</p>
+    </div>
+
+    <div class="offer">
+      <h3>Разбор темы</h3>
+      <p class="desc">Философская тема, проблема или мыслитель, разобранные под ваш запрос. Возможно индивидуально и для небольшой группы.</p>
+      <p class="price">Час, 35 000 ₸.</p>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- ============ ШКОЛЬНИКАМ ============ -->
+<section>
+  <div class="wrap">
+    <p class="kicker">Школьникам</p>
+
+    <div class="offer">
+      <h3>Философский клуб et seq.</h3>
+      <p class="desc">Еженедельная лекция и семинар, 9–11 класс, онлайн. Два семинарских трека: клубный и олимпиадный.</p>
+      <p class="price">Один трек 50 000 ₸ в месяц, оба 60 000 ₸ в месяц. Скидки до 50% участникам философских и гуманитарных олимпиад.</p>
+    </div>
+
+    <div class="offer">
+      <h3>Индивидуальные занятия</h3>
+      <p class="desc">Написание эссе, введение в философию, критическое мышление.</p>
+      <p class="price">Астрономический час: 6–8 класс 20 000 ₸, 9–12 класс 30 000 ₸.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ШКОЛАМ И ЛЕКТОРИЯМ (тёмный) ============ -->
+<section class="dark">
+  <div class="wrap">
+    <p class="kicker">Направления</p>
+    <h2>Линейка курсов: от сказки до исследования</h2>
+
+    <div class="courses">
+      <div class="course">
+        <span class="n">01</span>
+        <span class="name">Сторителлинг</span>
+        <span class="meta"><span class="grade">4–7 классы</span> · как устроена история; свой рассказ, комикс или спектакль</span>
+      </div>
+      <div class="course">
+        <span class="n">02</span>
+        <span class="name">Введение в философию</span>
+        <span class="meta"><span class="grade">5–11 классы</span> · философия через сказки, затем основы и первоисточники</span>
+      </div>
+      <div class="course">
+        <span class="n">03</span>
+        <span class="name">Критическое мышление</span>
+        <span class="meta"><span class="grade">7–11 классы</span> · искажения, софизмы, проверка источников, разбор фейка</span>
+      </div>
+      <div class="course">
+        <span class="n">04</span>
+        <span class="name">Введение в логику</span>
+        <span class="meta"><span class="grade">8–11 классы</span> · суждения и законы логики; много задач, включая свои</span>
+      </div>
+      <div class="course">
+        <span class="n">05</span>
+        <span class="name">Чтение сложных текстов</span>
+        <span class="meta"><span class="grade">9–11 классы</span> · медленное чтение, реконструкция авторского аргумента</span>
+      </div>
+      <div class="course">
+        <span class="n">06</span>
+        <span class="name">Написание эссе</span>
+        <span class="meta"><span class="grade">7–11 классы</span> · два уровня: тезис и структура → источники и контраргумент</span>
+      </div>
+      <div class="course">
+        <span class="n">07</span>
+        <span class="name">Дебаты и риторика</span>
+        <span class="meta"><span class="grade">7–11 классы</span> · этос, пафос, логос; учебные дебаты и публичная речь</span>
+      </div>
+      <div class="course">
+        <span class="n">08</span>
+        <span class="name">Основы исследования</span>
+        <span class="meta"><span class="grade">9–11 классы</span> · вопрос и гипотеза, работа с данными, защита мини-исследования</span>
+      </div>
+    </div>
+
+    <p class="leads">Куда это ведёт: олимпиады и конкурсы, ЕНТ и IELTS / SAT Writing, вступительные и мотивационные эссе, Model UN — и спокойная уверенность в разговоре.</p>
+
+    <p class="lede">Готов проводить разовые лекции, воркшопы и короткие курсы для школ, лекториев и организаций. Объём часов подбирается под запрос. Условия обсуждаются отдельно и зависят от темы, формата и подготовки.</p>
+  </div>
+</section>
+
+<!-- ============ ФИНАЛЬНЫЙ БЛОК (тёмный) ============ -->
+<section class="dark final">
+  <div class="wrap">
+    <div class="btns">
+      <a class="btn btn-lg" href="https://t.me/Arsmahnov">Написать в Telegram</a>
+      <a class="btn btn-lg btn-ghost" href="https://wa.me/77054588421">Написать в WhatsApp</a>
+    </div>
+    <p class="final-links">
+      Telegram-канал <a href="https://t.me/et_seq">t.me/et_seq</a> ·
+      Instagram <a href="https://www.instagram.com/et_sequentes">@et_sequentes</a> ·
+      почта <a href="mailto:arsmahnov@gmail.com">arsmahnov@gmail.com</a>
+    </p>
+    <p class="foot">Астана · онлайн</p>
+  </div>
+</section>
+
+</body>
+</html>
