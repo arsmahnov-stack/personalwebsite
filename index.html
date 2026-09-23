@@ -159,7 +159,7 @@
   .hero-photo img{
     display: block;
     width: 100%;
-    max-width: 400px;
+    max-width: 460px;
     height: auto;
     margin: 0 auto;
   }
@@ -309,14 +309,14 @@
     section{ padding: 76px 0; }
     .hero{ padding-top: 84px; }
     .hero-grid{
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 0.82fr 1.18fr;
       gap: 36px;
       align-items: center;
     }
     .hero-photo{ order: 0; }
     .hero-photo img{ max-width: 100%; }
-    .stats{ gap: 18px 12px; }
-    .stat .num{ font-size: 28px; }
+    .stats{ grid-template-columns: repeat(2, 1fr); gap: 22px 16px; }
+    .stat .num{ font-size: 30px; }
     .cols{ grid-template-columns: 1fr 1fr; gap: 48px; }
     .courses{ grid-template-columns: repeat(4, 1fr); }
     .course{ padding: 22px 18px; }
@@ -350,7 +350,7 @@
       </div>
 
       <div class="hero-photo">
-        <img src="photo.png" alt="Махнов Арсений" width="632" height="949" loading="eager">
+        <img src="photo.png" alt="Махнов Арсений" width="549" height="698" loading="eager">
       </div>
     </div>
   </div>
@@ -440,19 +440,19 @@
     <div class="offer">
       <h3>Читательский клуб «Несвоевременные размышления»</h3>
       <p class="desc">Регулярные встречи по классическим текстам, с 2022 года. Небольшой круг, разговор, а не лекция.</p>
-      <p class="price">Вход 1 000 ₸, дальше по желанию.</p>
+      <p class="price">Одна встреча — 1 000 ₸.</p>
     </div>
 
     <div class="offer">
       <h3>Философский разбор</h3>
       <p class="desc">Индивидуальная работа с одним вашим вопросом. Час один на один.</p>
-      <p class="price">От 50 000 до 100 000 ₸ за встречу, сумму в этом диапазоне вы выбираете сами. Предварительный получасовой разговор бесплатно, чтобы понять, ваш ли это формат.</p>
+      <p class="price">От 50 000 до 100 000 ₸ за встречу, сумму в этом диапазоне вы выбираете сами. Предварительный получасовой разговор бесплатно, чтобы понять, ваш ли это формат.</p>
     </div>
 
     <div class="offer">
       <h3>Разбор темы</h3>
       <p class="desc">Философская тема, проблема или мыслитель, разобранные под ваш запрос. Возможно индивидуально и для небольшой группы.</p>
-      <p class="price">Час, 35 000 ₸.</p>
+      <p class="price">Час, 35 000 ₸.</p>
     </div>
   </div>
 </section>
@@ -467,13 +467,13 @@
     <div class="offer">
       <h3>Философский клуб et seq.</h3>
       <p class="desc">Еженедельная лекция и семинар, 9–11 класс, онлайн. Два семинарских трека: клубный и олимпиадный.</p>
-      <p class="price">Один трек 50 000 ₸ в месяц, оба 60 000 ₸ в месяц. Скидки до 50% участникам философских и гуманитарных олимпиад.</p>
+      <p class="price">Один трек 50 000 ₸ в месяц, оба 60 000 ₸ в месяц. Скидки до 50% участникам философских и гуманитарных олимпиад.</p>
     </div>
 
     <div class="offer">
       <h3>Индивидуальные занятия</h3>
       <p class="desc">Написание эссе, введение в философию, критическое мышление.</p>
-      <p class="price">Астрономический час: 6–8 класс 20 000 ₸, 9–12 класс 30 000 ₸.</p>
+      <p class="price">Астрономический час: 6–8 класс 20 000 ₸, 9–12 класс 30 000 ₸.</p>
     </div>
   </div>
 </section>
